@@ -29,9 +29,6 @@ const DetailArtworksInfo: React.FC<DetailArtworksInfoProps> = ({ contact, artwor
   const baseURL = process.env.NEXT_PUBLIC_APP_BASE_URL;
   const artworksURL = `${baseURL}${pathname}`;
 
-  console.log('baseURL', baseURL);
-  console.log('artworksURL', artworksURL);
-
   const message = `Halo, saya menemukan karya ini dan tertarik untuk tahu lebih lanjut: ${artworksURL}`;
 
   const onMouseMove = (e: React.MouseEvent) => {
