@@ -1,0 +1,25 @@
+# compiled output
+.next
+node_modules
+
+# config
+.env.*
+.git
+.gitignore
+.commitlintrc.json
+.lintstagedrc.json
+.dockerignore
+.prettierignore
+.vscode
+.husky
+Dockerfile
+docker-compose-dev.yml
+docker-compose-stag.yml
+docker-compose-prod.yml
+Makefile
+
+# misc
+eslint.config.mjs
+.prettierrc
+.npmrc
+README.md

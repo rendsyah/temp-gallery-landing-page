@@ -1,0 +1,25 @@
+services:
+  gallery-landing-page-stag:
+    container_name: gallery-landing-page-stag
+    image: gallery-landing-page-stag:1.0.0
+    build:
+      context: .
+      args:
+        - APP_PORT=${APP_PORT}
+        - NEXT_PUBLIC_APP_BASE_URL=${NEXT_PUBLIC_APP_BASE_URL}
+    ports:
+      - 127.0.0.1:${APP_PORT}:${APP_PORT}
+    env_file:
+      - .env
+    environment:
+      NODE_ENV: production
+      PORT: ${APP_PORT}
+      TZ: Asia/Jakarta
+    restart: always
+    networks:
+      - gallery
+
+networks:
+  gallery:
+    name: gallery
+    external: true

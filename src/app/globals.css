@@ -1,0 +1,92 @@
+@import 'tailwindcss';
+
+body {
+  background-color: #fefdfd;
+  color: #292929;
+}
+
+@theme {
+  /* PRIMARY */
+  --color-primary-black: #292929;
+
+  /* BACKGROUND */
+  --color-background: #fefdfd;
+
+  /* FONT */
+  --font-lato: 'Lato', sans-serif;
+  --font-playfair: 'Playfair Display', serif;
+}
+
+@layer base {
+  button {
+    @apply cursor-pointer;
+  }
+
+  button:disabled {
+    @apply cursor-not-allowed;
+  }
+}
+
+@utility input {
+  @apply w-full appearance-none rounded-4xl bg-background py-2.75 px-4 text-primary-black placeholder:text-primary-black focus:outline-hidden;
+}
+
+@utility input-label {
+  @apply block text-sm font-semibold mb-1.5;
+}
+
+@utility input-error {
+  @apply border-red-600 focus:ring-red-600 focus:border-red-600;
+}
+
+@utility input-text-error {
+  @apply absolute right-0 -bottom-5 text-red-600 text-xs;
+}
+
+@utility input-disabled {
+  @apply bg-gray-100 cursor-not-allowed;
+}
+
+@utility section {
+  @apply max-w-screen-xl 2xl:max-w-screen-2xl h-full mx-auto;
+}
+
+@utility no-scrollbar {
+  /* Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+@utility custom-scrollbar {
+  &::-webkit-scrollbar {
+    @apply size-1.5;
+  }
+
+  &::-webkit-scrollbar-track {
+    @apply rounded-full;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full;
+  }
+}
+
+/* Slick */
+.slick-dots {
+  @apply absolute bottom-6 right-6 w-auto;
+}
+
+.slick-dots li button:before {
+  @apply content-[''];
+}
+
+.slick-dots li button {
+  @apply w-2.5 h-2.5 bg-[#ffffff66] rounded-full transition-all duration-300 ease-in-out;
+}
+
+.slick-dots li.slick-active button {
+  @apply bg-white;
+}
